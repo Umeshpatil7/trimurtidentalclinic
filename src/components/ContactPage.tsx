@@ -84,7 +84,7 @@ export function ContactPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-white py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-gray-900 mb-4">Contact Us</h1>
@@ -105,7 +105,7 @@ export function ContactPage() {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="py-12 md:py-16">
+      <section className="py-8 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
@@ -334,7 +334,7 @@ export function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-8 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-gray-900 mb-8 text-center">Find Us on Map</h2>
           <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -364,7 +364,7 @@ export function ContactPage() {
       </section>
 
       {/* Emergency Contact */}
-      <section className="py-12 md:py-16 bg-red-50 border-t-4 border-red-500">
+      <section className="py-8 md:py-16 bg-red-50 border-t-4 border-red-500">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-gray-900 mb-4">Dental Emergency?</h2>
           <p className="text-gray-600 mb-6">

@@ -49,39 +49,39 @@ export function HomePage({ onNavigate }: HomePageProps) {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-blue-50 to-white py-12 md:py-20">
+      <section className="relative bg-gradient-to-br from-blue-50 to-white py-8 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
-              <h1 className="text-blue-900 mb-4">
+              <h1 className="text-blue-900 mb-4 text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight">
                 Your Trusted Dental Care in Nashik
               </h1>
-              <p className="text-gray-600 mb-8">
+              <p className="text-gray-600 mb-8 text-lg">
                 Experience world-class dental treatments with advanced technology and expert care.
                 Located at Trimurti Chowk, Nashik - your smile is our priority.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
                   onClick={() => onNavigate('contact')}
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors font-medium shadow-md hover:shadow-lg"
                 >
                   <Calendar className="w-5 h-5" />
                   Book Appointment
                 </button>
                 <a
                   href="tel:+919420692977"
-                  className="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+                  className="bg-white hover:bg-gray-50 text-blue-600 border-2 border-blue-600 px-8 py-3 rounded-lg flex items-center justify-center gap-2 transition-colors font-medium"
                 >
-                  <Phone className="w-5 h-5" />
+                  <Phone className="w-5 h-5 fill-current" />
                   Call Now
                 </a>
               </div>
             </div>
-            <div className="relative">
+            <div className="relative mt-8 lg:mt-0">
               <img
                 src={clinicImage}
                 alt="Trimurti Dental Clinic Interior"
-                className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-xl"
+                className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-xl"
               />
             </div>
           </div>
@@ -89,15 +89,15 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Features */}
-      <section className="py-12 md:py-16 bg-white">
+      <section className="py-8 md:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="text-center p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mb-4">
+              <div key={index} className="text-center p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors shadow-sm">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-blue-600 rounded-full mb-4 shadow-sm">
                   <feature.icon className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-gray-900 mb-2">{feature.title}</h3>
+                <h3 className="text-gray-900 mb-2 font-bold">{feature.title}</h3>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>
               </div>
             ))}
@@ -106,23 +106,23 @@ export function HomePage({ onNavigate }: HomePageProps) {
       </section>
 
       {/* Services */}
-      <section className="py-12 md:py-16 bg-gray-50">
+      <section className="py-8 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-gray-900 mb-4">Our Dental Services</h2>
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="text-gray-900 mb-4 text-3xl md:text-4xl font-bold">Our Dental Services</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Comprehensive dental care solutions tailored to your needs
             </p>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {services.map((service) => (
               <button
                 key={service.id}
                 onClick={() => onNavigate(service.id)}
-                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center group hover:-translate-y-1"
+                className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all text-center group hover:-translate-y-1 border border-gray-100"
               >
                 <div className="text-4xl mb-3">{service.icon}</div>
-                <h3 className="text-gray-900 text-sm md:text-base group-hover:text-blue-600 transition-colors">
+                <h3 className="text-gray-900 text-base font-medium group-hover:text-blue-600 transition-colors">
                   {service.name}
                 </h3>
               </button>
@@ -131,7 +131,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="text-center mt-8">
             <button
               onClick={() => onNavigate('services')}
-              className="text-blue-600 hover:text-blue-700 inline-flex items-center gap-2"
+              className="text-blue-600 hover:text-blue-700 font-medium inline-flex items-center gap-2 bg-blue-50 px-6 py-2 rounded-lg transition-colors"
             >
               View All Services →
             </button>

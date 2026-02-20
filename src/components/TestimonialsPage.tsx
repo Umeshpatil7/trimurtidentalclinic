@@ -103,7 +103,7 @@ export function TestimonialsPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-8 md:py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-gray-900 mb-4">Patient Testimonials</h1>
@@ -115,7 +115,7 @@ export function TestimonialsPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-8 md:py-12 bg-blue-600 text-white">
+      <section className="py-12 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -139,7 +139,7 @@ export function TestimonialsPage() {
       </section>
 
       {/* Testimonials Grid */}
-      <section className="py-8 md:py-16">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {testimonials.map((testimonial, index) => (
@@ -163,7 +163,7 @@ export function TestimonialsPage() {
       </section>
 
       {/* Google Reviews CTA */}
-      <section className="py-8 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-gray-900 mb-4">Find Us on Google</h2>
           <p className="text-gray-600 mb-6">
@@ -187,7 +187,7 @@ export function TestimonialsPage() {
       </section>
 
       {/* Leave Review CTA */}
-      <section className="py-8 md:py-16 bg-blue-600 text-white">
+      <section className="py-12 md:py-16 bg-blue-600 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="mb-4">Had a Great Experience?</h2>
           <p className="mb-8 text-blue-100 max-w-2xl mx-auto">

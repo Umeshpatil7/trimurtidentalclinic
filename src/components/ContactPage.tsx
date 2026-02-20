@@ -363,10 +363,13 @@ export function ContactPage() {
           </p>
           <a
             href="tel:+919420692977"
-            className="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg transition-colors"
+            className="inline-flex items-center justify-center gap-3 bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg transition-colors text-left"
           >
-            <Phone className="w-5 h-5" />
-            Call Emergency Line: +91 94206 92977
+            <Phone className="w-5 h-5 flex-shrink-0" />
+            <div className="leading-tight">
+              <span className="block text-sm font-medium opacity-90">Call Emergency Line:</span>
+              <span className="block text-lg font-bold">+91 94206 92977</span>
+            </div>
           </a>
         </div>
       </section>

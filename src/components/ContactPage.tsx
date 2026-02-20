@@ -17,26 +17,28 @@ export function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/patilur99999@gmail.com', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          phone: formData.phone,
-          email: formData.email,
-          preferredDate: formData.preferredDate,
-          treatment: formData.treatment,
-          message: formData.message,
-          _subject: `New Dental Appointment Request: ${formData.name}`,
-        }),
-      });
+    const subject = `New Appointment Request from ${formData.name}`;
+    const body = `
+Name: ${formData.name}
+Phone: ${formData.phone}
+Email: ${formData.email || 'N/A'}
+Preferred Date: ${formData.preferredDate}
+Treatment: ${formData.treatment}
 
-      if (response.ok) {
-        setSubmitted(true);
+Additional Message:
+${formData.message || 'None'}
+    `.trim();
+
+    // Use mailto link to open user's email client
+    window.location.href = `mailto:patilur99999@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Give visual feedback
+    setTimeout(() => {
+      setSubmitted(true);
+      setIsSubmitting(false);
+
+      setTimeout(() => {
+        setSubmitted(false);
         setFormData({
           name: '',
           phone: '',
@@ -45,17 +47,8 @@ export function ContactPage() {
           treatment: '',
           message: '',
         });
-      } else {
-        alert('Something went wrong. Please try calling us instead.');
-      }
-    } catch (error) {
-      alert('Error submitting form. Please call us directly.');
-    } finally {
-      setIsSubmitting(false);
-      setTimeout(() => {
-        setSubmitted(false);
       }, 5000);
-    }
+    }, 1000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -84,7 +77,7 @@ export function ContactPage() {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-blue-50 to-white py-8 md:py-16">
+      <section className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-gray-900 mb-4">Contact Us</h1>
@@ -97,7 +90,7 @@ export function ContactPage() {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors font-medium shadow-sm"
             >
-              <Star className="w-5 h-5 fill-current text-white" />
+              <Star className="w-5 h-5 fill-current" />
               <span>Rate us on Google Review</span>
             </a>
           </div>
@@ -105,7 +98,7 @@ export function ContactPage() {
       </section>
 
       {/* Contact Info & Form */}
-      <section className="py-8 md:py-16">
+      <section className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Contact Information */}
@@ -334,7 +327,7 @@ export function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="py-8 md:py-16 bg-gray-50">
+      <section className="py-12 md:py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-gray-900 mb-8 text-center">Find Us on Map</h2>
           <div className="rounded-2xl overflow-hidden shadow-lg">
@@ -364,7 +357,7 @@ export function ContactPage() {
       </section>
 
       {/* Emergency Contact */}
-      <section className="py-8 md:py-16 bg-red-50 border-t-4 border-red-500">
+      <section className="py-12 md:py-16 bg-red-50 border-t-4 border-red-500">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-gray-900 mb-4">Dental Emergency?</h2>
           <p className="text-gray-600 mb-6">

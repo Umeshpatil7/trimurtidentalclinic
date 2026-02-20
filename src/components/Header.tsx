@@ -35,12 +35,12 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               onClick={() => handleNavClick('home')}
               className="flex items-center gap-2"
             >
-              <div className="w-12 h-12 flex items-center justify-center">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
                 <img src={logo} alt="Trimurti Dental Clinic Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="hidden sm:block text-left">
-                <div className="text-blue-900 font-bold leading-tight">Trimurti Dental Clinic</div>
-                <div className="text-blue-600 text-xs font-medium">Trimurti Chowk, Nashik</div>
+              <div className="block text-left">
+                <div className="text-blue-900 font-bold leading-tight text-sm sm:text-base">Trimurti Dental Clinic</div>
+                <div className="text-blue-600 text-[10px] sm:text-xs font-medium">Trimurti Chowk, Nashik</div>
               </div>
             </button>
           </div>
@@ -52,8 +52,8 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`px-3 py-2 text-sm font-medium transition-colors ${currentPage === item.id
-                    ? 'text-blue-600'
-                    : 'text-gray-700 hover:text-blue-600'
+                  ? 'text-blue-600'
+                  : 'text-gray-700 hover:text-blue-600'
                   }`}
               >
                 {item.name}
@@ -104,8 +104,8 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
                 key={item.id}
                 onClick={() => handleNavClick(item.id)}
                 className={`block w-full text-left px-4 py-3 transition-colors ${currentPage === item.id
-                    ? 'text-blue-600 bg-blue-50'
-                    : 'text-gray-700 hover:bg-gray-50'
+                  ? 'text-blue-600 bg-blue-50'
+                  : 'text-gray-700 hover:bg-gray-50'
                   }`}
               >
                 {item.name}

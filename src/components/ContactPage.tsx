@@ -17,26 +17,45 @@ export function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate API call for sending email and scheduling calendar
-    console.log('Form data being sent to patilur99999@gmail.com:', formData);
-
-    // Simulate network delay
-    await new Promise(resolve => setTimeout(resolve, 1500));
-
-    setSubmitted(true);
-    setIsSubmitting(false);
-
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        preferredDate: '',
-        treatment: '',
-        message: '',
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/patilur99999@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          preferredDate: formData.preferredDate,
+          treatment: formData.treatment,
+          message: formData.message,
+          _subject: `New Dental Appointment Request: ${formData.name}`,
+        }),
       });
-    }, 5000);
+
+      if (response.ok) {
+        setSubmitted(true);
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          preferredDate: '',
+          treatment: '',
+          message: '',
+        });
+      } else {
+        alert('Something went wrong. Please try calling us instead.');
+      }
+    } catch (error) {
+      alert('Error submitting form. Please call us directly.');
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -76,9 +95,9 @@ export function ContactPage() {
               href="https://share.google/zLC67Vv7R8APT35d7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-2 rounded-lg transition-colors font-medium shadow-sm"
+              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors font-medium shadow-sm"
             >
-              <Star className="w-5 h-5 fill-current" />
+              <Star className="w-5 h-5 fill-current text-white" />
               <span>Rate us on Google Review</span>
             </a>
           </div>

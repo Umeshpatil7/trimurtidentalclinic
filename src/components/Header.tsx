@@ -40,7 +40,6 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               </div>
               <div className="text-left">
                 <div className="text-blue-900 font-bold leading-tight text-sm sm:text-base">Trimurti Dental Clinic</div>
-                <div className="text-blue-600 font-medium text-[10px] sm:text-xs">Trimurti Chowk, Nashik</div>
               </div>
             </button>
           </div>

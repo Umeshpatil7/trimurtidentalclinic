@@ -35,12 +35,12 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               onClick={() => handleNavClick('home')}
               className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center">
+              <div className="w-10 h-10 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center">
                 <img src={logo} alt="Trimurti Dental Clinic Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="hidden sm:block text-left">
-                <div className="text-blue-900 font-bold leading-tight text-sm sm:text-base">Trimurti Dental Clinic</div>
-                <div className="text-blue-600 text-[10px] sm:text-xs font-medium">Trimurti Chowk, Nashik</div>
+              <div className="hidden lg:block text-left">
+                <div className="text-blue-900 font-bold leading-tight text-base">Trimurti Dental Clinic</div>
+                <div className="text-blue-600 text-xs font-medium">Trimurti Chowk, Nashik</div>
               </div>
             </button>
           </div>

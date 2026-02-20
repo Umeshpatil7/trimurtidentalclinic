@@ -35,11 +35,12 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
               onClick={() => handleNavClick('home')}
               className="flex items-center gap-2"
             >
-              <div className="w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 flex items-center justify-center">
                 <img src={logo} alt="Trimurti Dental Clinic Logo" className="w-full h-full object-contain" />
               </div>
-              <div className="text-left flex-shrink whitespace-nowrap overflow-hidden">
-                <div className="text-blue-900 font-bold text-[15px] sm:text-lg tracking-tight truncate">Trimurti Dental Clinic</div>
+              <div className="text-left">
+                <div className="text-blue-900 font-bold leading-tight text-sm sm:text-base">Trimurti Dental Clinic</div>
+                <div className="text-blue-600 text-[10px] sm:text-xs font-medium">Trimurti Chowk, Nashik</div>
               </div>
             </button>
           </div>
@@ -74,10 +75,11 @@ export function Header({ onNavigate, currentPage }: HeaderProps) {
 
             <a
               href="tel:+919420692977"
-              className="hidden sm:flex bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg items-center gap-2 transition-colors text-sm font-medium shadow-sm"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg flex items-center gap-2 transition-colors text-sm font-medium shadow-sm"
             >
               <Phone className="w-4 h-4" />
-              <span>Call Now</span>
+              <span className="hidden lg:inline">Call Now</span>
+              <span className="lg:hidden">Call</span>
             </a>
 
             {/* Mobile menu button */}

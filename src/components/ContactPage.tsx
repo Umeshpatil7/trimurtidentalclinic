@@ -17,38 +17,36 @@ export function ContactPage() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    const subject = `New Appointment Request from ${formData.name}`;
-    const body = `
-Name: ${formData.name}
-Phone: ${formData.phone}
-Email: ${formData.email || 'N/A'}
-Preferred Date: ${formData.preferredDate}
-Treatment: ${formData.treatment}
-
-Additional Message:
-${formData.message || 'None'}
-    `.trim();
-
-    // Use mailto link to open user's email client
-    window.location.href = `mailto:patilur99999@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-    // Give visual feedback
-    setTimeout(() => {
+    try {
+      await fetch('https://formsubmit.co/ajax/patilur99999@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: 'New Appointment Request - Trimurti Dental Clinic',
+          ...formData
+        })
+      });
       setSubmitted(true);
-      setIsSubmitting(false);
-
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        preferredDate: '',
+        treatment: '',
+        message: '',
+      });
       setTimeout(() => {
         setSubmitted(false);
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          preferredDate: '',
-          treatment: '',
-          message: '',
-        });
       }, 5000);
-    }, 1000);
+    } catch (error) {
+      console.error(error);
+      alert('Failed to send request. Please try again or call us directly.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {

@@ -221,7 +221,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
               </div>
             ))}
           </div>
-          <div className="text-center mt-8 md:mt-12 pb-4">
+          <div className="text-center mt-10 pb-6 md:pb-0">
             <button
               onClick={() => onNavigate('testimonials')}
               className="bg-white text-blue-600 border border-blue-200 px-6 py-2 rounded-lg hover:bg-blue-50 transition-colors inline-flex items-center gap-2 font-medium"

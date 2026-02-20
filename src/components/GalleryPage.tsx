@@ -53,10 +53,10 @@ export function GalleryPage() {
                     <img
                       src={image}
                       alt={`${section.category} ${imageIndex + 1}`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all flex items-center justify-center">
                       <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity bg-blue-600 px-3 py-1 rounded-full text-sm">
                         View Image
                       </span>

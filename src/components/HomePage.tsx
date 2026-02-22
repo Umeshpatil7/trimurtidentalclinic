@@ -54,11 +54,11 @@ export function HomePage({ onNavigate }: HomePageProps) {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             <div>
               <h1 className="text-blue-900 mb-4">
-                Your Trusted Dental Care in Nashik
+                Best Dentist in Nashik | Trimurti Dental Clinic
               </h1>
               <p className="text-gray-600 mb-8">
                 Experience world-class dental treatments with advanced technology and expert care.
-                Located at Trimurti Chowk, Nashik - your smile is our priority.
+                Located at Trimurti Chowk, Cidco, Nashik - your smile is our priority.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
@@ -80,7 +80,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div className="relative">
               <img
                 src={clinicImage}
-                alt="Trimurti Dental Clinic Interior"
+                alt="Best Dental Clinic in Nashik - Trimurti Dental Clinic Interior"
                 className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-xl"
               />
             </div>
@@ -146,7 +146,7 @@ export function HomePage({ onNavigate }: HomePageProps) {
             <div>
               <img
                 src={doctorImage}
-                alt="Dr. Swati Deore - Trimurti Dental Clinic"
+                alt="Top Dentist in Nashik - Dr. Swati Deore"
                 className="w-full h-64 md:h-96 object-cover rounded-2xl shadow-lg"
               />
             </div>

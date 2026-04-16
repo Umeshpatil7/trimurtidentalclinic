@@ -18,7 +18,7 @@ export function ContactPage() {
     setIsSubmitting(true);
 
     try {
-      await fetch('https://formsubmit.co/ajax/patilur99999@gmail.com', {
+      await fetch('https://formsubmit.co/ajax/drswatideore@gmail.com', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -135,8 +135,8 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h3 className="text-gray-900 mb-2">Email Us</h3>
-                    <a href="mailto:patilur99999@gmail.com" className="text-blue-600 hover:text-blue-700">
-                      patilur99999@gmail.com
+                    <a href="mailto:drswatideore@gmail.com" className="text-blue-600 hover:text-blue-700">
+                      drswatideore@gmail.com
                     </a>
                   </div>
                 </div>

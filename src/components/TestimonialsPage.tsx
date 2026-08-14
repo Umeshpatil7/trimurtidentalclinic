@@ -106,10 +106,19 @@ export function TestimonialsPage() {
       <section className="bg-gradient-to-br from-blue-50 to-white py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-gray-900 mb-4">Patient Testimonials</h1>
-            <p className="text-gray-600">
-              Read what our satisfied patients have to say about their experience
+            <h1 className="text-gray-900 mb-4 font-bold text-3xl md:text-4xl">Patient Testimonials</h1>
+            <p className="text-gray-600 mb-6">
+              Read what our satisfied patients have to say about their experience at Trimurti Dental Clinic
             </p>
+            <a
+              href="https://share.google/zLC67Vv7R8APT35d7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-slate-900 font-semibold px-6 py-2.5 rounded-full transition-all shadow-sm hover:shadow-md"
+            >
+              <Star className="w-5 h-5 fill-current" />
+              <span>★ 4.9 on Google • Write a Review</span>
+            </a>
           </div>
         </div>
       </section>

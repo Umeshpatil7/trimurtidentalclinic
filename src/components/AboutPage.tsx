@@ -1,6 +1,5 @@
 import { Award, Users, Heart, Target } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import doctorImage from 'figma:asset/31a64498573c6787ea642688cbbab1e20a2febc4.png';
+import doctorImage from '../assets/doctor-portrait.jpg';
 
 export function AboutPage() {
   return (

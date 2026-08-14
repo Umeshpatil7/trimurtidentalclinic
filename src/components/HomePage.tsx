@@ -1,6 +1,6 @@
 import { Phone, Calendar, Award, Shield, Clock, Star } from 'lucide-react';
-import clinicImage from '../assets/d74e76532ea3a22d56844a13867595f5f9d4066d.png';
-import doctorImage from '../assets/31a64498573c6787ea642688cbbab1e20a2febc4.png';
+import clinicImage from '../assets/clinic-operatory.jpg';
+import doctorImage from '../assets/doctor-portrait.jpg';
 
 interface HomePageProps {
   onNavigate: (page: string) => void;

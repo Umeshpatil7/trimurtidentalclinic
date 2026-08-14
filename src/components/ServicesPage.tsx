@@ -1,3 +1,9 @@
+import rootCanalImg from '../assets/services/Root Canal.jpeg';
+import dentalImplantImg from '../assets/services/dental Implant.jpeg';
+import scalingImg from '../assets/services/Scaling & Polishing.jpeg';
+import pediatricImg from '../assets/services/Kids Section.jpeg';
+import scannerImg from '../assets/services/In house scanner.jpeg';
+
 interface ServicesPageProps {
   onNavigate: (page: string) => void;
 }
@@ -7,6 +13,7 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
     {
       id: 'root-canal',
       icon: '🦷',
+      image: rootCanalImg,
       name: 'Root Canal Treatment',
       description: 'Save your natural tooth with painless root canal therapy using advanced techniques',
       features: ['Painless procedure', 'Single sitting option', 'High success rate'],
@@ -14,9 +21,34 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
     {
       id: 'dental-implants',
       icon: '💎',
+      image: dentalImplantImg,
       name: 'Dental Implants',
       description: 'Permanent solution for missing teeth with titanium implants that look and feel natural',
       features: ['Permanent solution', 'Natural appearance', 'Long-lasting results'],
+    },
+    {
+      id: 'scaling-polishing',
+      icon: '🪥',
+      image: scalingImg,
+      name: 'Scaling & Polishing',
+      description: 'Professional teeth cleaning to remove plaque, tartar, and stains',
+      features: ['Deep cleaning', 'Stain removal', 'Fresh breath'],
+    },
+    {
+      id: 'pediatric-dentistry',
+      icon: '👶',
+      image: pediatricImg,
+      name: 'Pediatric Dentistry (Kids Care)',
+      description: 'Specialized dental care for children in a friendly, comfortable and caring environment',
+      features: ['Child-friendly approach', 'Dedicated kids setup', 'Painless preventive care'],
+    },
+    {
+      id: 'crowns-bridges',
+      icon: '👑',
+      image: scannerImg,
+      name: 'Digital Scanning & Modern Prosthetics',
+      description: 'Advanced in-house digital intraoral 3D scanner for precision crowns, bridges, and aligners',
+      features: ['In-house 3D digital scanner', 'Instant impression', 'Precision custom fit'],
     },
     {
       id: 'teeth-whitening',
@@ -111,26 +143,49 @@ export function ServicesPage({ onNavigate }: ServicesPageProps) {
             {services.map((service) => (
               <div
                 key={service.id}
-                className="bg-white border border-gray-200 rounded-xl p-6 hover:border-blue-300 hover:shadow-lg transition-all cursor-pointer group"
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-blue-300 hover:shadow-lg transition-all cursor-pointer group flex flex-col"
                 onClick={() => onNavigate(service.id)}
               >
-                <div className="text-4xl mb-4">{service.icon}</div>
-                <h3 className="text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                  {service.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, index) => (
-                    <li key={index} className="flex items-center gap-2 text-sm text-gray-700">
-                      <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 text-blue-600 text-sm group-hover:underline">
-                  Learn More →
+                {service.image ? (
+                  <div className="relative h-44 w-full overflow-hidden bg-gray-100">
+                    <img
+                      src={service.image}
+                      alt={service.name}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute top-3 right-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur-sm shadow flex items-center justify-center text-xl">
+                      {service.icon}
+                    </div>
+                  </div>
+                ) : (
+                  <div className="pt-6 px-6">
+                    <div className="text-4xl mb-2">{service.icon}</div>
+                  </div>
+                )}
+
+                <div className="p-6 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-gray-900 mb-2 font-semibold text-lg group-hover:text-blue-600 transition-colors">
+                      {service.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm mb-4 line-clamp-2">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, index) => (
+                        <li key={index} className="flex items-center gap-2 text-sm text-gray-700">
+                          <div className="w-1.5 h-1.5 bg-blue-600 rounded-full flex-shrink-0"></div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="mt-5 pt-3 border-t border-gray-100 flex items-center justify-between text-blue-600 text-sm font-medium group-hover:underline">
+                    <span>View Treatment Details</span>
+                    <span>→</span>
+                  </div>
                 </div>
               </div>
             ))}

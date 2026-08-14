@@ -1,5 +1,10 @@
 import { CheckCircle, Clock, ArrowLeft } from 'lucide-react';
 import { ImageWithFallback } from './figma/ImageWithFallback';
+import rootCanalImg from '../assets/services/Root Canal.jpeg';
+import dentalImplantImg from '../assets/services/dental Implant.jpeg';
+import scalingImg from '../assets/services/Scaling & Polishing.jpeg';
+import pediatricImg from '../assets/services/Kids Section.jpeg';
+import scannerImg from '../assets/services/In house scanner.jpeg';
 
 interface ServiceDetailPageProps {
   serviceId: string;
@@ -11,7 +16,7 @@ export function ServiceDetailPage({ serviceId, onNavigate }: ServiceDetailPagePr
     'root-canal': {
       name: 'Root Canal Treatment',
       icon: '🦷',
-      image: 'https://images.unsplash.com/photo-1758205307804-097f5437189f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW50YWwlMjBjaGFpciUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjI2OTg0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: rootCanalImg,
       description: 'Root canal treatment is a dental procedure to save a tooth that has become infected or badly decayed. Our painless root canal therapy uses advanced techniques and modern equipment to ensure your comfort throughout the procedure.',
       benefits: [
         'Saves your natural tooth',
@@ -48,7 +53,7 @@ export function ServiceDetailPage({ serviceId, onNavigate }: ServiceDetailPagePr
     'dental-implants': {
       name: 'Dental Implants',
       icon: '💎',
-      image: 'https://images.unsplash.com/photo-1593022356769-11f762e25ed9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW50YWwlMjBpbXBsYW50fGVufDF8fHx8MTc2MjY3ODM1OHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: dentalImplantImg,
       description: 'Dental implants are the best permanent solution for missing teeth. Made from titanium, they are surgically placed into the jawbone and function just like natural teeth.',
       benefits: [
         'Permanent and long-lasting solution',
@@ -233,7 +238,7 @@ export function ServiceDetailPage({ serviceId, onNavigate }: ServiceDetailPagePr
     'pediatric-dentistry': {
       name: 'Pediatric Dentistry',
       icon: '👶',
-      image: 'https://images.unsplash.com/photo-1611690061822-b707a67bfebb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW50aXN0JTIwcGF0aWVudCUyMHNtaWxlfGVufDF8fHx8MTc2MjY4MTA5OXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: pediatricImg,
       description: 'Specialized dental care for children from infancy through adolescence. We create a friendly, comfortable environment for young patients.',
       benefits: [
         'Early detection of dental issues',
@@ -307,7 +312,7 @@ export function ServiceDetailPage({ serviceId, onNavigate }: ServiceDetailPagePr
     'scaling-polishing': {
       name: 'Scaling & Polishing',
       icon: '🪥',
-      image: 'https://images.unsplash.com/photo-1758205307804-097f5437189f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZW50YWwlMjBjaGFpciUyMGVxdWlwbWVudHxlbnwxfHx8fDE3NjI2OTg0NDh8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: scalingImg,
       description: 'Professional deep cleaning to remove plaque, tartar, and stains for healthier teeth and gums.',
       benefits: [
         'Removes plaque and tartar',
